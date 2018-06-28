@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Djangonauts</title>
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+            <a href="{% url 'home' %}"><img src="{% static 'logo.png' %}"></a>
+            <nav>
+                <ul>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                    <li class="highlight">
+                        <a href="{% url 'articles:create' %}">Create Article</a>
+                    </li>
+                    {% else %}
+                    <li class="login-link">
+                        <a href="{% url 'accounts:login' %}">
+                            <button>Login</button>
+                        </a>
+                    </li>
+                    <li class="signup-link">
+                        <a href="{% url 'accounts:signup' %}">
+                            <button>Signup</button>
+                        </a>
+                    </li>
+                    {% endif %}
+                    
+                </ul>
+            </nav>
+            </header>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
