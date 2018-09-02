@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+	<h1>BMI Home</h1>
+	<div class="form">
+		<form method="POST" class='site-form'>
+			{% csrf_token %}
+			<input type="text" name="height" placeholder="Height(Meter)">
+			<input type="text" name="weight" placeholder="Weight(KG)">
+			<input type="submit" value='Calculate BMI' />
+		</form>
+	</div>
+	<div class="result">
+		{{ bmi.result }} <br>
+		{{ bmi.point }}
+	</div>
+
+{% endblock %}

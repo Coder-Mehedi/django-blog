@@ -21,7 +21,7 @@ a, a:hover, a:visited{
 
 div.wrapper h1{
 	text-align: center;
-	margin: 50px auto;
+	margin: 20px auto;
 	margin-top: 10px;
 	font-size: 2.4em;
 }
@@ -29,6 +29,9 @@ header{
 	display: grid;
 	grid-template-columns: 1fr 3fr;
 	padding: 20px 0;
+}
+header a img {
+    height: 84px;
 }
 nav{
 	justify-content: flex-end;
@@ -87,7 +90,7 @@ nav button{
 	text-transform: capitalize;
 }
 .site-form{
-	margin-top: 60px;
+	margin-top: 20px;
 	border: 1px solid #00dba0;
 	padding: 20px;
 }
@@ -126,4 +129,8 @@ nav ul li{
 	color: #bbb;
 	font-size: 0.9em;
 	display:block;
+}
+
+.weather__info p {
+	font-size: 20px;
 }
