@@ -14,6 +14,8 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('weather/', include('weather.urls')),
     path('bmi/', include('bmi.urls')),
+    path('medinfo', include('medinfo.urls')),
+    path('api/', include('student.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

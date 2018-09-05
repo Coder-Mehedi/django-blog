@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'accounts',
     'weather',
     'bmi',
+    'medinfo',
+    'student',
 ]
 
 MIDDLEWARE = [
