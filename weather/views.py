@@ -4,7 +4,7 @@ import requests
 def weather_view(request):
 	url = 'http://api.openweathermap.org/data/2.5/find?q={}&units=imperial&appid=082c68e081c87691c85380998e4d0d6d'
 	city = 'London'
-	if request.POST:
+	if request.method == 'POST':
 		city = request.POST['city']
 	data = requests.get(url.format(city)).json()
 	# description = data['list'][0]['weather'][1]['description']

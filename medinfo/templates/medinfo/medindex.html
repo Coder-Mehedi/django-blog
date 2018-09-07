@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Medicine Information</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h1>Medicine Information</h1>
+	<div class="form">
+		<form method="POST" class='site-form'>
+			{% csrf_token %}
+			<input type="text" name="med_name" placeholder="Enter a Name">
+			<input type="submit" value='Search' />
+		</form>
+	</div>
+	<p>Name : {{ data.name }}</p>
+	<p>indications : {{ data.indications }}</p>
+	<p>Child dose : {{ data.child_dose }}</p>
+	<p>Adult dose : {{ data.adult_dose }}</p>
+	<p>Renal dose : {{ data.renal_dose }}</p>
+	<p>Contraindications : {{ data.contraindications }}</p>
+	<p>Side_Effects: {{ data.side_effects }}</p>
+	<p>Precautions and Worning : {{ data.precautions_and_worning }}</p>
+	<p>Pregnancy category : {{ data.pregnancy_category }}</p>
+	<p>Therapeutic class :{{ data.therapeutic_class }}</p>
+	<p>Mode of action :{{ data.mode_of_action }}</p>
+	<p>Interaction :{{ data.interaction }}</p>
+	<p>Pack size_price :{{ data.pack_size_price }}</p>
+</body>
+</html>
